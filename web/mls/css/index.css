@@ -1,0 +1,676 @@
+/*head*/
+
+.head {
+    width: 100%;
+    height: 38px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+
+ul.head-nav {
+    margin: 0px auto;
+    width: 1200px;
+}
+
+ul.head-nav li {
+    float: right;
+    font-size: 12px;
+    height: 38px;
+    line-height: 38px;
+}
+ul.head-nav li i{
+    float: left;
+}
+
+ul.head-nav li.lf-L0 a {
+    border-left: none;
+}
+
+ul.head-nav li a {
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    border-left: 1px dotted #cbcbcb;
+    padding: 0px 15px;
+}
+
+i.dow-img1 {
+    width: 10px;
+    height: 16px;
+    background: url(../img/head-xiazai.png) center left no-repeat;
+    margin-right: 4px;
+}
+
+i.dow-img2 {
+    width: 13px;
+    height: 15px;
+    background: url(../img/head-dingdan.png) no-repeat;
+    margin-right: 9px;
+}
+
+i.dow-img3 {
+    width: 18px;
+    height: 15px;
+    background: url(../img/head-gouwuche.png) no-repeat;
+    margin-right: 4px;
+}
+
+i.num-left {
+    width: 4px;
+    height: 15px;
+    background: url(../img/left.png) no-repeat;
+    position: absolute;
+    left: -4px;
+    top: 0;
+}
+
+i.num-right {
+    width: 4px;
+    height: 15px;
+    background: url(../img/right.png) no-repeat;
+    position: absolute;
+    right: -4px;
+    top: 0;
+}
+
+.sale-num {
+    background: url(../img/center.png) repeat-x;
+    padding: 0 2px;
+    position: relative;
+    left: 7px;
+    color: #fff;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+}
+
+a.buy-car {
+    margin-right: 12px;
+}
+
+i.dow-img4 {
+    width: 15px;
+    height: 16px;
+    background: url(../img/qq.png) no-repeat;
+    margin-right: 3px;
+}
+
+i.dow-img5 {
+    width: 16px;
+    height: 16px;
+    background: url(../img/weixin.png) no-repeat;
+    margin-right: 3px;
+}
+
+.logo-box {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    background: url(../img/logo_n4.png) no-repeat;
+    width: 106px;
+    height: 36px;
+    margin: 15px 254px 15px 10px;
+}
+
+.logo a.name-link {
+    width: 106px;
+    height: 36px;
+    text-indent: -999em;
+    display: inline-block;
+}
+
+.sear-font {
+    height: 30px;
+    width: 460px;
+    border: 2px solid #f69;
+    margin: 17px 0 15px;
+}
+
+.sear-font select {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-right: 1px solid #e6e6e6;
+    background: #f5f5f5;
+    color: #666;
+}
+
+.sear-font a {
+    background: url(../img/sousuo.png) 8px center no-repeat;
+    width: 26px;
+    height: 30px;
+}
+
+.sear-font input {
+    width: 274px;
+    height: 30px;
+    color: #a9a9a9;
+    border: none;
+}
+
+a.search-butn {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    background: #f69;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*end head*/
+
+
+/*nav*/
+
+.nav {
+    width: 100%;
+    background: #f69;
+}
+
+.nav ul {
+    width: 1074px;
+    padding-left: 126px;
+    margin: 0 auto;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    color: #fff;
+    font-weight: bold;
+    padding: 0 18px 0 15px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.nav li.nav-bg {
+    background: url(../img/nav-bg.png) right center no-repeat;
+}
+
+.nav li:hover {
+    background: #ed3577;
+}
+.nav li.nav-bg:hover{
+    background: url(../img/nav-bg.png) right center no-repeat #ed3577;
+}
+
+/*end nav*/
+
+
+/*banner*/
+
+.banner {
+    width: 100%;
+    height: 419px;
+    background: url(../img/banner.jpg) center center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.banner-two {
+    width: 1200px;
+    height: 134px;
+    padding: 10px 0 24px;
+    position: relative;
+    margin: 0 auto;
+}
+
+ul.banner-list1 {
+    width: 198px;
+    height: 572px;
+    border: 1px solid #e6e6e6;
+    padding: 0 20px;
+    position: absolute;
+    top: -420px;
+    left: 0px;
+    background: #fff;
+}
+
+ul.banner-list1 li {
+    border-bottom: 1px dotted #e6e6e6;
+    height: 114px;
+    position: relative;
+}
+
+ul.banner-list1 li span{
+    width: 5px;
+    height: 9px;
+    background: url(../img/in.png) no-repeat;
+    position: absolute;right:0px;top:57px;
+}
+ul.banner-list1 li.btto0 {
+    border-bottom: none;
+}
+
+ul.banner-list1 li p {
+    height: 38px;
+    line-height: 38px;
+    padding-left: 23px;
+}
+
+ul.banner-list1 li p a {
+    font-size: 16px;
+    color: #f69;
+}
+
+ul.banner-list1 li a {
+    margin: 0 10px 3px 0;
+    display: inline-block;
+}
+
+a.link-pink {
+    color: #f69;
+}
+
+p.list1-title1 {
+    background: url(../img/hot.png) left center no-repeat;
+}
+
+p.list1-title2 {
+    background: url(../img/close.png) left center no-repeat;
+}
+p.list1-title3 {
+    background: url(../img/shoe0.png) left center no-repeat;
+}
+p.list1-title4 {
+    background: url(../img/bag.png) left center no-repeat;
+}
+p.list1-title5 {
+    background: url(../img/peishi.png) left center no-repeat;
+}
+.banner-list2 {
+    position: absolute;
+    left: 242px;
+}
+
+.banner-list2 li {
+    border: 1px solid #e6e6e6;
+    float: left;
+    margin-left: 10px;
+}
+
+.banner-list3 {
+    position: absolute;
+    right: 0px;
+    top: -420px;
+}
+
+.banner-list3 li {
+    border-bottom: 1px solid #e6e6e6;
+    width: 200px;
+}
+
+
+/*end banner*/
+
+
+/*main*/
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+div.main h3{
+    font-size: 20px;
+    padding: 0 0 6px 38px;
+    border-bottom: 1px solid #e6e6e6;
+}
+h3.main-title1 {
+    background: url(../img/wujiaoxing.png) no-repeat;
+}
+h3.main-title2 {
+    background: url(../img/tuangou0.png) no-repeat;
+}
+.main-title span {
+    color: #f69;
+}
+
+.main .main-list {
+    margin: 0 -29px 41px 0;
+    padding-top: 15px;
+}
+
+.main .main-list li {
+    width: 170px;
+    float: left;
+    margin-right: 34px;
+}
+
+p.goods-name {
+    height: 36px;
+    line-height: 18px;
+    font-size: 12px;
+}
+
+.price {
+    height: 38px;
+    line-height: 38px;
+    padding-bottom: 4px;
+    border-bottom: 1px dotted #cbcbcb;
+    margin-bottom: 10px;
+}
+
+.new-price {
+    font-size: 14px;
+    color: #f69;
+}
+
+.old-price {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.buy-num {
+    font-size: 12px;
+    color: #666;
+}
+
+a.more {
+    color: #999;
+}
+
+.main-img {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(../img/zhongjiantu.png) center center no-repeat;
+}
+
+
+/*end main*/
+
+
+/*分类*/
+
+.sma-title {
+    width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 15px 0 10px;
+}
+
+.icon-title {
+    padding-left: 38px;
+    color: #f69;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.title3 {
+    background: url(../img/close2.png) left center no-repeat;
+}
+.title4 {
+    background: url(../img/xie1.png) left center no-repeat;
+}
+.title5 {
+    background: url(../img/bag0.png) left center no-repeat;
+}
+.title6 {
+    background: url(../img/peishi0.png) left center no-repeat;
+}
+.title7 {
+    background: url(../img/book0.png0.png) left center no-repeat;
+}
+.sma-title p {
+    font-size: 12px;
+    color: #999;
+    border-left: 1px dotted #ccc;
+    padding-left: 15px;
+    float: left;
+    margin-top: 4px;
+}
+
+.sma-title p span {
+    font-weight: bold;
+    color: #666;
+}
+
+.icon {
+    width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.icon-left {
+    width: 940px;
+    padding-top: 20px;
+}
+
+.icon-list li {
+    position: relative;
+    margin:5px 5px 0 0;
+    float: left;
+}
+.icon-list li img{
+    width: 180px;
+    height: 254px;
+}
+.img-botm {
+    width: 180px;
+    height: 30px;
+    background: #000;
+    opacity: 0.3;
+    filter: alpha(opcity=30);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+.icon-list1{
+    width: 940px;
+    height:44px;
+    padding:16px 0 10px;
+}
+.icon-list1 li{
+    width: 312px;
+    border-right: 1px dotted #ccc;
+    float: left;
+}
+.ico-name{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    color: #f69;
+    font-size: 16px;
+    margin:0 18px 0 12px;
+}
+.ico-name1{
+    width: 230px;
+}
+.ico-name1 a{
+    margin-right:4px;
+    display: inline-block;
+}
+.icon-right{
+    width: 239px;
+    border-left: 1px solid #e6e6e6;
+    padding:20px 0 0 20px;
+}
+.icon-right dt{
+    margin-bottom: 5px;
+}
+.icon-right dt h5{
+    font-size: 14px;
+    color: #666;
+}
+.icon-right dd{
+    padding:12px 0;
+    border-bottom: 1px dotted #e6e6e6;
+}
+.icon-right dd.borB0{
+    border-bottom: none;
+}
+.icon-right dd a img{
+    width: 32px;
+    height:32px;
+    border: 1px solid #ddd;
+    float: left;
+    margin:5px 12px 0 0;
+}
+p.shop-name{
+    color: #666;
+}
+p.shop-num{
+    font-size: 12px;
+    color: #999;
+}
+a.book-link{
+    padding: 0 18px 0 15px;
+    border-left: 1px dotted #e6e6e6;
+}
+a.bl0{
+    border-left: none;
+}
+.book-big{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0 10px;
+}
+.book{
+    width: 1200px;
+    margin:0 auto 20px;
+}
+.book-title{
+    background: url(../img/wujiaoxing.png) no-repeat;
+    font-size: 20px;
+    padding: 0 0 6px 38px;
+}
+.book-title span{
+    color: #f69;
+}
+.book-list{
+        margin-left: -15px;
+}
+.book-list li{
+    width: 200px;
+    height: 273px;
+    border:1px solid #e6e6e6;
+    padding:10px 13px 0;
+    float: left;
+    margin-left: 15px;
+}
+.book-list li p{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 11px;
+}
+.book-list div{
+    font-size: 12px;
+    color: #999;
+    height: 51px;
+    padding-top: 13px;
+}
+.book-list div a{
+    display: block;
+    color: #fff;
+    width:64px;
+    height:20px;
+    background:#f69;
+    float:right;
+    text-align: center;
+    border-radius:3px;
+}
+/*end 分类*/
+/*footer*/
+.footer{
+    height: 281px;
+    border-top:1px solid #ddd;
+    background: #f5f5f5;
+    padding-top: 30px;
+}
+.footer-list{
+    height: 180px;
+    width: 1200px;
+    margin:0 auto;
+    border-bottom: 1px solid #ddd;
+}
+.call-us{
+    background: url(../img/call.png) left 4px no-repeat;
+    padding-left: 48px;
+    width: 220px;
+    float: left;
+    height:180px;
+    margin-right: 54px;
+}
+p.call-num{
+    font-size: 16px;
+    font-weight: bold;
+}
+.footer-list dl dt{
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 14px;
+}
+.footer-list dl dd{
+    margin-bottom:10px;
+    height:16px;
+    line-height: 16px;
+}
+.footer-list dl{
+    float: left;
+    margin-right: 57px;
+}
+dd.sina{
+    background: url(../img/sina.png) no-repeat;
+    padding-left: 19px;
+}
+dd.qqroom{
+    background: url(../img/qqkongjian.png) no-repeat;
+    padding-left: 19px;
+}
+dd.qqweibo{
+    background: url(../img/tengxunweibo.png) no-repeat;
+    padding-left: 19px;
+}
+.footer-list dl dd img.erweima{
+    height: 115px;
+    width: 115px;
+}
+.footer-list dl dd img.kehuduan{
+    height: 98px;
+    width: 130px;
+}
+.footer-list dl.download{
+    float: right;
+    margin: 0;
+}
+.frind-link{
+    width: 1200px;
+    height: 30px;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 30px;
+    margin: 0 auto;
+}
+.frind-link a{
+    float: left;
+    margin-left: 10px;
+}
+.frind-link a.more-link{
+    float: right;
+}
+.footer p{
+    width: 1200px;
+    margin:0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+/*end footer*/

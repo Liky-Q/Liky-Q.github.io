@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Focus Picture</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	img{
+		vertical-align: top;
+	}
+	.focus{
+		width: 660px;
+		height: 330px;
+		margin:100px auto;
+		position: relative;
+		overflow: hidden;
+	}
+	.focus img{
+		width:660px;
+		height:330px;
+	}
+	.img-box{
+		width:2640px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.img-box div{
+		width: 660px;
+		height: 330px;
+		float: left;
+	}
+	
+	ul{
+		position: absolute;
+		left:10px;
+		bottom:10px;
+	}
+	ul li{
+		width: 20px;
+		height: 20px;
+		float: left;
+		margin:0 5px;
+		background: #ccc;
+	}
+	ul .active{
+		background: yellow;
+	}
+</style>
+<script src="jquery-1.7.2.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+<script>
+	$.fn.slider = function(json){
+		/*var aLi = $('.focus ul li');
+		var oBox = $('.img-box');*/
+		var json = json || {};
+		json.events = json.events || 'mouseover';
+		this.each(function(index,elements){
+			var aLi = $(elements).find('ul li');
+			var oBox = $(elements).find('.img-box');
+
+			aLi[json.events](function(){
+				aLi.removeClass('active');
+				$(this).addClass('active');
+				// oBox.css('left',-660*$(this).index())
+				oBox.stop().animate({
+					'left':-660*$(this).index()
+				},{
+					'duration':1000,
+					'easing':'easeOutQuint'
+				});
+			})
+		})
+	}
+
+	$(function(){
+		$('#focus1').slider();
+		$('#focus2').slider({
+			'events':'click'
+		});
+		// $('.focus').slider();
+	})
+</script>
+</head>
+
+<body>
+	<div class="focus" id="focus1">
+		<div class="img-box">
+			<div><img src="img/11.jpg" alt=""></div>
+			<div><img src="img/12.jpg" alt=""></div>
+			<div><img src="img/13.jpg" alt=""></div>
+			<div><img src="img/14.jpg" alt=""></div>
+		</div>
+		<ul>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+
+	<div class="focus" id="focus2">
+		<div class="img-box">
+			<div><img src="img/11.jpg" alt=""></div>
+			<div><img src="img/12.jpg" alt=""></div>
+			<div><img src="img/13.jpg" alt=""></div>
+			<div><img src="img/14.jpg" alt=""></div>
+		</div>
+		<ul>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

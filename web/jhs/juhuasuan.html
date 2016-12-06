@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0"/>
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-family: "微软雅黑";
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clearfix:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        h1 {
+            width: 16rem;
+            height: 1.75rem;
+            text-indent: -999em;
+            background: -webkit-linear-gradient(#fff, #ebebeb);
+            padding-top: 0.75rem;
+        }
+
+        h1 a {
+            background: url(img/logo.png) no-repeat;
+            background-size: 3.7rem 1rem;
+            margin: 0 auto;
+            display: block;
+            width: 3.7rem;
+            height: 1rem;
+        }
+
+        header {
+            position: relative;
+        }
+
+        header>a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3.175rem;
+            height: 1.55rem;
+            background: url(img/back.png) no-repeat;
+            background-size: 3.175rem  1.55rem;
+            text-indent: -999em;
+            margin: 0.5rem 0 0 0.5rem;
+        }
+
+        .banner {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .banner ul.num {
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+
+        .banner ul.num li {
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 50%;
+            margin: 0 0.125rem;
+            background: #a9a9a9;
+        }
+
+        .banner ul.num li.active {
+            background: #ff4300;
+        }
+        .banner ul.banner-img{
+            width: 600%;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+            -webkit-transform: translate3d(-16rem,0,0);
+        }
+        .banner ul.banner-img li{
+            float: left;
+            width: calc(100%/6);
+        }
+        .banner ul.banner-img img{
+            width: 100%;
+        }
+        .sort ul {
+            margin: 0 0.4rem;
+        }
+
+        .sort ul li {
+            width: 25%;
+            float: left;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+            margin: 0 auto;
+            display: block;
+            background-size: 100%;
+        }
+
+        .icon1 {
+            background-image: url('img/icon1.png');
+        }
+
+        .icon2 {
+            background-image: url('img/icon2.png');
+        }
+
+        .icon3 {
+            background-image: url('img/icon3.png');
+        }
+
+        .icon4 {
+            background-image: url('img/icon4.png');
+        }
+
+        .icon5 {
+            background-image: url('img/icon5.png');
+        }
+
+        .icon6 {
+            background-image: url('img/icon6.png');
+        }
+
+        .icon7 {
+            background-image: url('img/icon7.png');
+        }
+
+        .icon8 {
+            background-image: url('img/icon8.png');
+        }
+
+        .sort p {
+            font-size: 0.55rem;
+            line-height: 0.55rem;
+            margin-top: 0.45rem;
+        }
+
+        .sort p a {
+            color: #999;
+        }
+
+        .sec1 {
+            margin: 0 0.5rem;
+            padding-top: 1.1rem;
+        }
+
+        .hot-head {
+            margin: 0.5rem 0;
+            padding-bottom: 0.5rem;
+            font-size: 0.65rem;
+            border-bottom: 0.1rem solid #dcdcdc;
+        }
+
+        h3 {
+            border-left: 0.1rem solid #d51938;
+            line-height: 0.75rem;
+            padding-left: 0.45rem;
+            float: left;
+            color: #333;
+        }
+
+        .hot-head a {
+            float: right;
+            font-weight: bold;
+        }
+
+        .hot-list li {
+            width: 15rem;
+            height: 3rem;
+            margin-bottom: 0.5rem;
+            background: url(img/sanjiao.png) no-repeat 14.15rem center #f4f4f4;
+            background-size: 0.35rem 0.55rem;
+        }
+
+        .hot-list strong {
+            width: 1.5rem;
+            height: 3rem;
+            color: #fff;
+            font-size: 1rem;
+            float: left;
+            line-height: 3rem;
+            text-align: center;
+        }
+
+        .hot-list li:nth-child(1) strong {
+            background: #e00202;
+        }
+
+        .hot-list li:nth-child(2) strong {
+            background: #ff4800;
+        }
+
+        .hot-list li:nth-child(3) strong {
+            background: #ff7300;
+        }
+
+        .hot-list li:nth-child(4) strong {
+            background: #ff9d00;
+        }
+
+        .hot-list li:nth-child(5) strong {
+            background: #ffa800;
+        }
+
+        .hot-list li:nth-child(6) strong {
+            background: #ffb400;
+        }
+
+        .hot-list li:nth-child(7) strong {
+            background: #ffba00;
+        }
+
+        .hot-list li:nth-child(8) strong {
+            background: #fcd000;
+        }
+
+        .hot-list li:nth-child(9) strong {
+            background: #ffd719;
+        }
+
+        .hot-list li:nth-child(10) strong {
+            background: #ffe152;
+        }
+
+        .hot-list li a {
+            width: 4.5rem;
+            height: 3rem;
+            float: left;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .hot-list li:nth-child(1) a {
+            background-image: url(img/list1.png);
+        }
+
+        .hot-list li:nth-child(2) a {
+            background-image: url(img/list2.png);
+        }
+
+        .hot-list li:nth-child(3) a {
+            background-image: url(img/list3.png);
+        }
+
+        .hot-list li:nth-child(4) a {
+            background-image: url(img/list4.png);
+        }
+
+        .hot-list li:nth-child(5) a {
+            background-image: url(img/list5.png);
+        }
+
+        .hot-list li:nth-child(6) a {
+            background-image: url(img/list6.png);
+        }
+
+        .hot-list li:nth-child(7) a {
+            background-image: url(img/list7.png);
+        }
+
+        .hot-list li:nth-child(8) a {
+            background-image: url(img/list8.png);
+        }
+
+        .hot-list li:nth-child(9) a {
+            background-image: url(img/list9.png);
+        }
+
+        .hot-list li:nth-child(10) a {
+            background-image: url(img/list10.png);
+        }
+
+        .hot-list li div {
+            padding: 0.6rem 0 0.6rem 0.55rem;
+            float: left;
+        }
+
+        .hot-list li div p {
+            line-height: 0.9rem;
+            color: #999;
+            font-size: 0.6rem;
+        }
+
+        .hot-list li div p .font-red {
+            color: #c7223d;
+        }
+
+        .hot-list li div p .prcie {
+            text-decoration: line-through;
+        }
+
+        .hot-list li>span {
+            color: #d51938;
+            font-size: 0.75rem;
+            float: right;
+            font-weight: bold;
+            line-height: 3rem;
+            padding-right: 1.3rem;
+            background:
+        }
+
+        h4 {
+            width: 100%;
+            background: #f5f5f5;
+            text-align: center;
+            color: #666;
+            font-size: 0.7rem;
+            font-weight:normal;
+        }
+
+        .one {
+            height: 2rem;
+            line-height: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product {
+            height: 8.8rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .pro-l {
+            height: 8.15rem;
+            width: 3.75rem;
+            float: left;
+            position: relative;
+            background: #ff3900;
+            font-size: 0.65rem;
+            color: #fff;
+            text-align: center;
+            padding-top: 0.7rem;
+        }
+
+        .pro-l i {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .pro-l1 i {
+            width: 2.6rem;
+            height: 3.4rem;
+            background-image: url(img/pro-l1.png);
+        }
+
+        .product ul {
+            float: left;
+            border-right: 1px solid #eee;
+            border-top: 1px solid #eee;
+            box-sizing: border-box;
+            width: 11.25rem;
+        }
+
+        .product ul li {
+            width: 3.68rem;
+            height: 2.15rem;
+            float: left;
+            border-left: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            font-size: 0.65rem;
+            line-height: 2.15rem;
+            text-align: center;
+        }
+
+        .product ul li a {
+            color: #999;
+        }
+
+        .product ul li a.red {
+            color: #d51942;
+        }
+
+        .two {
+            height: 2.2rem;
+            line-height: 2.2rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .two i {
+            width: 0.325rem;
+            height: 0.55rem;
+            background: url(img/sanjiao.png) no-repeat;
+            position: absolute;
+            top: 0.85rem;
+            right: 0.5rem;
+            background-size: 100%;
+        }
+
+        .pro-l2 {
+            background: #8bca11;
+        }
+
+        .pro-l2 i {
+            width: 3rem;
+            height: 4.25rem;
+            background-image: url(img/pro-l2.png);
+        }
+
+        .pro-l3 {
+            background: #838383;
+        }
+
+        .pro-l3 i {
+            width: 2.95rem;
+            height: 3.45rem;
+            background-image: url(img/pro-l3.png);
+        }
+
+        ul.tell {
+
+            /* display: table; */
+            display: -webkit-box;
+            width: 100%;
+        }
+
+        ul.tell li {
+
+            /* width: 5rem; */
+            height: 4rem;            /* display: table-cell; */
+            -webkit-box-flex: 1;            /* float: left; */
+            margin-top: 0.25rem;
+            margin-bottom: 0.45rem
+        }
+
+        ul.tell li p {
+            font-size: 0.6rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        ul.tell li:nth-child(1) {
+            background: #38a4f1;
+        }
+
+        ul.tell li:nth-child(1) i {
+            width: 0.95rem;
+            height: 1.1rem;
+            background: url(img/apple.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            margin: 0.8rem auto 0.9rem;
+        }
+
+        ul.tell li:nth-child(2) {
+            background: #8bca11;
+        }
+
+        ul.tell li:nth-child(2) i {
+            width: 0.95rem;
+            height: 1.05rem;
+            background: url(img/anzhuo.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            margin: 0.8rem auto 0.9rem;
+        }
+
+        ul.tell li:nth-child(3) {
+            background: #ff7404;
+        }
+
+        ul.tell li:nth-child(3) i {
+            width: 0.95rem;
+            height: 0.85rem;
+            background: url(img/msg.png) no-repeat;
+            background-size: 100%;
+            display: block;
+            margin: 0.85rem auto 1rem;
+        }
+
+        .login {
+            background: #f8f8f8;
+            font-size: 0.65rem;
+            padding: 0.75rem;
+        }
+
+        .login a {
+            float: left;
+            margin-right: 1.2rem;
+        }
+
+        .login a.top {
+            float: right;
+            width: 2.45rem;
+            margin-right: 0;
+            color: #000;
+        }
+
+        .login a.top i {
+            width: 0.4rem;
+            height: 0.2rem;
+            background: url(img/shangsanjiao.png) no-repeat;
+            background-size: 100%;
+            float: right;
+            margin-top: 0.25rem;
+        }
+        .foot{
+            width: 100%;
+            height: 3.3rem;
+            padding-top: 0.3rem;
+            background: #eee;
+            text-align: center;
+        }
+        .foot p:nth-child(1){
+            line-height: 2.15rem;
+        }
+        .foot a{
+            font-size: 0.65rem;
+            color: #333;
+            margin: 0 0.325rem;
+        }
+        .foot p:nth-child(2){
+            line-height: 0.65rem;
+            font-size: 0.5rem;
+            color: #999;
+        }
+    </style>
+    <script>
+    
+    	document.addEventListener('DOMContentLoaded',function(){
+            (function(win,doc){
+                change();
+                win.addEventListener('resize',change,false);
+                function change(){
+                    doc.documentElement.style.fontSize=20/320*doc.documentElement.clientWidth+'px';
+                }
+            })(window,document)
+            
+            var oULN=document.querySelector('.num');
+            var aNLi=oULN.querySelectorAll('li');
+            var oBan=document.querySelector('.banner-img');
+            var aBanImg=oBan.querySelectorAll('li');
+            var iNow=1;
+            var bOk=false;
+            var x=-aBanImg[0].offsetWidth;
+            oBan.addEventListener('touchstart',function(ev){
+                if(bOk)return;
+                bOk=true;
+                oBan.style.WebkitTransition='none';
+
+                var downX=ev.targetTouches[0].clientX;
+                var disX=downX-x;
+                document.addEventListener('touchmove',fnMove,false);
+                document.addEventListener('touchend',fnEnd,false);
+                function fnMove(ev){
+                    x=ev.targetTouches[0].clientX-disX;
+                    oBan.style.WebkitTransform='translate3d('+x+'px,0,0)';
+                }
+                function fnEnd(ev){
+                    oBan.style.WebkitTransition='0.3s';
+                    document.removeEventListener('touchmove',fnMove,false);
+                    document.removeEventListener('touchend',fnEnd,false);
+                    var UpX=ev.changedTouches[0].clientX;
+                    // console.log(UpX);
+                    var n=Math.abs(UpX-downX);
+                    if(n>50){
+                        if(UpX>downX){
+                            //right
+                            iNow--;
+                        }else{
+                            iNow++;
+                        }
+                    
+                        x=-iNow*aBanImg[0].offsetWidth;
+                        // console.log(aBanImg[0].offsetWidth);
+                        oBan.style.WebkitTransform='translate3d('+x+'px,0,0)';
+                    }else if(n==0){
+                        bOk=false;
+                    }else{
+                        x=-iNow*aBanImg[0].offsetWidth;
+                        oBan.style.WebkitTransform='translate3d('+x+'px,0,0)';
+                    }
+                }
+                ev.preventDefault();    
+            },false)
+            oBan.addEventListener('transitionend',function(){
+                bOk=false;
+                oBan.style.WebkitTransition='none';
+                if(iNow==aBanImg.length-1){
+                    iNow=1;
+                    x=-iNow*aBanImg[0].offsetWidth;
+                    oBan.style.WebkitTransform='translate3d('+x+'px,0,0)';
+
+                }
+                if(iNow==0){
+                    iNow=aBanImg.length-2;
+                    x=-iNow*aBanImg[0].offsetWidth;
+                    oBan.style.WebkitTransform='translate3d('+x+'px,0,0)';
+
+                }
+                for(var i=0;i<aNLi.length;i++){
+                    aNLi[i].className='';
+                }
+                aNLi[iNow-1].className='active';
+            },false)
+            
+        },false)
+    </script>
+</head>
+<body>
+	<header>
+		<h1><a href="#">聚划算</a></h1>
+		<a href="#">返回</a>
+	</header>
+    <div class="banner">
+        <ul class="banner-img">
+            <li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+
+            <li><a href="#"><img src="img/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""></a></li>
+
+            <li><a href="#"><img src="img/1.jpg" alt=""></a></li>
+
+        </ul>
+        
+        <ul class="num">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>	 
+    <section>
+        <nav class="sort">
+            <ul class="clearfix">
+                <li>
+                    <a href="#" class="icon icon1"></a>
+                    <p> <a href="#">商品</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon2"></a>
+                    <p> <a href="#">生活</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon3"></a>
+                    <p> <a href="#">品牌</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon4"></a>
+                    <p> <a href="#">聚宝盆</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon5"></a>
+                    <p> <a href="#">聚名品</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon6"></a>
+                    <p> <a href="#">聚家装</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon7"></a>
+                    <p> <a href="#">聚透</a></p>
+                </li>
+                <li>
+                    <a href="#" class="icon icon8"></a>
+                    <p> <a href="#">客户端</a></p>
+                </li>
+            </ul>
+        </nav>
+        <div class="sec1">
+            <div class="hot-head clearfix">
+                <h3>聚划算热卖排行</h3>    
+                <a href="#">TOP10</a>
+            </div>
+            <ol class="hot-list">
+                <li class="clearfix">
+                    <strong>1</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥51</span>
+                </li>
+                <li class="clearfix">
+                    <strong>2</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p> 
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥51</span>
+                </li>
+                <li class="clearfix">
+                    <strong>3</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥289</span>
+                </li>
+                <li class="clearfix">
+                    <strong>4</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">288</span>
+                        </p>
+                    </div>
+                    <span>¥88</span>
+                </li>
+                <li class="clearfix">
+                    <strong>5</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥199</span>
+                </li>
+                <li class="clearfix">
+                    <strong>6</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">1.7</span>
+                            折  ¥<span class="prcie">3299</span>
+                        </p>
+                    </div>
+                    <span>¥588</span>
+                </li>
+                <li class="clearfix">
+                    <strong>7</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">6.3</span>
+                            折  ¥<span class="prcie">7665</span>
+                        </p>
+                    </div>
+                    <span>¥4599</span>
+                </li>
+                <li class="clearfix">
+                    <strong>8</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥51</span>
+                </li>
+                <li class="clearfix">
+                    <strong>9</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 68423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">439</span>
+                        </p>
+                    </div>
+                    <span>¥129</span>
+                </li>
+                <li class="clearfix">
+                    <strong>10</strong>
+                    <a href="#"></a>
+                    <div>
+                        <p>已售 45423</p>
+                        <p>
+                            <span class="font-red">2.3</span>
+                            折  ¥<span class="prcie">299</span>
+                        </p>
+                    </div>
+                    <span>¥9</span>
+                </li>
+            </ol>
+            <h4 class="one">更多划算  逛起来！</h4> 
+            <div class="product clearfix">
+                <div class="pro-l pro-l1">
+                    商品团
+                    <i></i>
+                </div>
+                <ul>
+                    <li><a href="#" class="red">服饰</a></li>
+                    <li><a href="#">配饰</a></li>
+                    <li><a href="#">美妆</a></li>
+                    <li><a href="#">鞋包</a></li>
+                    <li><a href="#">食品</a></li>
+                    <li><a href="#" class="red">家居</a></li>
+                    <li><a href="#">运动</a></li>
+                    <li><a href="#" class="red">电器</a></li>
+                    <li><a href="#">百货</a></li>
+                    <li><a href="#">母婴</a></li>
+                    <li><a href="#">数码</a></li>
+                    <li><a href="#">更多</a></li> 
+                </ul>
+            </div>   
+            <h4 class="two">精彩商品  逛起来！<i></i></h4> 
+            <div class="product clearfix">
+                <div class="pro-l pro-l2">
+                    生活团
+                    <i></i>
+                </div>
+                <ul>
+                    <li><a href="#" class="red">美食</a></li>
+                    <li><a href="#">教育</a></li>
+                    <li><a href="#">酒店</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">生活服务</a></li>
+                    <li><a href="#" class="red">卡券</a></li>
+                    <li><a href="#">摄影</a></li>
+                    <li><a href="#" class="red">粮油生鲜</a></li>
+                    <li><a href="#">门票</a></li>
+                    <li><a href="#">休闲娱乐</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li> 
+                </ul>
+            </div> 
+            <h4 class="two">品质生活  逛起来！<i></i></h4> 
+            <div class="product clearfix">
+                <div class="pro-l pro-l3">
+                    品牌团
+                    <i></i>
+                </div>
+                <ul>
+                    <li><a href="#" >七匹狼</a></li>
+                    <li><a href="#" class="red">粉红女... </a></li>
+                    <li><a href="#">卓诗尼</a></li>
+                    <li><a href="#" class="red">收纳博士</a></li>
+                    <li><a href="#">惠氏</a></li>
+                    <li><a href="#">夏乐</a></li>
+                    <li><a href="#">帕克伦</a></li>
+                    <li><a href="#">古今</a></li>
+                    <li><a href="#"  class="red">九牧</a></li>
+                    <li><a href="#">诺奥</a></li>
+                    <li><a href="#">红豆</a></li>
+                    <li><a href="#">曼秀雷敦</a></li> 
+                </ul>
+            </div> 
+            <h4 class="two">品牌折扣  逛起来！<i></i></h4> 
+            <ul class="tell">
+                <li><a href="#"><i></i><p>IOS客户端</p></a></li>
+                <li><a href="#"><i></i><p>安卓客户端</p></a></a></li>
+                <li><a href="#"><i></i><p>意见反馈</p></a></a></li>
+            </ul>
+        </div>
+    </section> 
+    <footer>
+        <div class="login clearfix">
+            <a>登录</a><a>注册</a>
+            <a href="#" class="top">TOP<i></i></a>
+        </div>
+        <div class="foot">
+            <p>
+                <a href="#">标准版</a><a href="#">电脑版</a>
+            </p>
+            <p>©2013 浙B2-20080224   服务中心</p>
+        </div>
+    </footer>  
+</body>
+</html>
