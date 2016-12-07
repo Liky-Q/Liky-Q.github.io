@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>photo</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		img{
+			vertical-align: top;
+		}
+		ul{
+			width: 510px;
+			margin: 50px auto;
+			position: relative;
+		}
+		ul li{
+			width: 150px;
+			height: 150px;
+			margin: 10px;
+			float: left;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		input{
+			position: absolute;top: 20px;left: 50%;
+		}
+	</style>
+	<script type="text/javascript" src="js/move.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl=document.querySelector('ul');
+			var aLi=oUl.querySelectorAll('li');
+			var oInput=document.querySelector('input');
+			var arr=[];
+
+			oInput.onclick=function(){
+				arr.sort(function(){
+					return 0.5-Math.random();
+				})
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].index=i;
+					move(aLi[i],{left:arr[i].left,top:arr[i].top});
+				}
+			}
+
+			for(var i=0;i<aLi.length;i++){
+				arr.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop});
+			}
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].style.position='absolute';
+				aLi[i].style.left=arr[i].left+'px';
+				aLi[i].style.top=arr[i].top+'px';
+				aLi[i].style.margin=0;
+				aLi[i].index=i;
+				aLi[i].onmousedown=function(ev){
+					var disX=ev.clientX-this.offsetLeft;
+					var disY=ev.clientY-this.offsetTop;
+					for(var i=0;i<aLi.length;i++){
+						aLi[i].style.zIndex=0;
+					}
+					this.style.zIndex++;
+					var _this=this;
+
+					document.onmousemove=function(ev){
+						var x=ev.clientX-disX;
+						var y=ev.clientY-disY;
+						_this.style.left=x+'px';
+						_this.style.top=y+'px';
+						var near=lately(_this);
+						// for(var i=0;i<aLi.length;i++){
+						// 	aLi[i].style.border='none';
+						// }
+						// if(near){
+						// 	near.style.border='1px solid red';
+						// }
+					}
+					document.onmouseup=function(){
+						document.onmousemove=document.onmouseup=null;
+						var near=lately(_this);
+						if(near){
+							var oX=arr[near.index].left;
+							var oY=arr[near.index].top;
+							var nX=arr[_this.index].left;
+							var nY=arr[_this.index].top;
+							// near.style.left=nX+'px';
+							// near.style.top=nY+'px';
+							move(near,{left:nX,top:nY});
+							move(_this,{left:oX,top:oY})
+							var b=_this.index;
+							_this.index=near.index;
+							near.index=b;
+
+						}else{
+							move(_this,{left:arr[_this.index].left,top:arr[_this.index].top})
+						}
+					}
+					return false;
+				}
+
+			}
+
+			function crash(obj1,obj2){
+				var l1=obj1.offsetLeft;
+				var t1=obj1.offsetTop;
+				var r1=l1 + obj1.offsetWidth;
+				var b1=t1 + obj1.offsetHeight;
+				var l2=obj2.offsetLeft;
+				var t2=obj2.offsetTop;
+				var r2=l2 + obj2.offsetWidth;
+				var b2=t2 + obj2.offsetHeight;
+				if(r1>l2 && b1>t2 && l1<r2 && t1<b2){
+					return true;
+				}else{
+					return false;
+				}
+			}
+			//选最近的
+			function lately(obj){
+				var max = new Date().getTime();
+				var minIndex=-1;
+				for(var i=0;i<aLi.length;i++){
+					if(crash(obj,aLi[i])){
+						var dis=getDis(obj,aLi[i]);
+						if(obj==aLi[i]){continue};
+						if(dis<max){
+							max=dis;
+							minIndex=i;
+						}
+					}
+				}
+				//如果没碰上minIndex为初始负值
+				if(minIndex<0){
+					return null;
+				}else{
+					return aLi[minIndex];
+
+				}
+							}
+			function getDis(obj1,obj2){
+				var a=obj1.offsetLeft/2-obj2.offsetLeft/2;
+				var b=obj2.offsetTop/2-obj1.offsetTop/2;
+				var c=Math.sqrt(a*a+b*b);
+				return c;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="随机位置" name="">
+	<ul>
+		<li><img src="cat/1.jpg" alt=""></li>
+		<li><img src="cat/2.jpg" alt=""></li>
+		<li><img src="cat/3.jpg" alt=""></li>
+		<li><img src="cat/4.jpg" alt=""></li>
+		<li><img src="cat/5.jpg" alt=""></li>
+		<li><img src="cat/6.jpg" alt=""></li>
+		<li><img src="cat/7.jpg" alt=""></li>
+		<li><img src="cat/8.jpg" alt=""></li>
+		<li><img src="cat/9.jpg" alt=""></li>
+	</ul>
+</body>
+</html>
